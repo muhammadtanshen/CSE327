@@ -4,8 +4,10 @@ import Product from '../components/Product';
 import { Row, Col } from "react-bootstrap";
 // import {connect} from 'react-redux';
 import {fetchAllProduct} from '../actions/index';
+import Loader from '../components/Loader';
+import Message from '../components/Message';
 
-const HomeScreen = (props) => {
+const HomeScreen = () => {
   //const [products,setProducts] = useState([]);
   const dispatch = useDispatch();
   const productList = useSelector(state=> state.productList);
@@ -20,8 +22,8 @@ const HomeScreen = (props) => {
   return (
     <div>
       <h1>Latest Product</h1>
-      {loading ? <h2>Loading....</h2> : error ? <h3>{error}</h3> :  <Row>
-        {products.map((product) => (
+      {loading ? <Loader/> : error ? (<Message>{error.message}</Message>) :  <Row>
+        {products.map(product => (
           <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
             <Product product={product}></Product>
           </Col>
@@ -33,43 +35,9 @@ const HomeScreen = (props) => {
 };
 
 
-// const mapStateToProps = (state)=>{
-//   console.log(state);
-//   return{
-//     products:state.productList.products,
-//   }
-// }
 
-export default (HomeScreen);
+
+export default HomeScreen;
 
 
 
-// class HomeScreen extends React.Component{
-//   componentDidMount(){
-//     this.props.fetchAllProduct();
-//   }
-//   render(){
-//     return(
-//       <div>
-//       <h1>Latest Product</h1>
-//       <Row>
-//         {this.props.products.map((product) => (
-//           <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
-//             <Product product={product}></Product>
-//           </Col>
-//         ))}
-//       </Row>
-//     </div>
-//     )
-//   }
-// }
-
-// const mapStateToProps = (state)=>{
-//   console.log(state);
-//   return{
-//     products:state.productList.products,
-//   }
-// }
-
-
-// export default connect(mapStateToProps,{fetchAllProduct})(HomeScreen);

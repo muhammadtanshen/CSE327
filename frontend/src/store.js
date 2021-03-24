@@ -2,12 +2,20 @@ import {createStore,combineReducers,applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 import {composeWithDevTools}   from 'redux-devtools-extension';
 import {productListReducer} from './reducers/productList';
+import {productReducer} from './reducers/productReducer';
+import {cartReducer} from './reducers/cartReducer';
 
 const reducer = combineReducers({
-    productList:productListReducer
+    productList:productListReducer,
+    singleProduct:productReducer,
+    cart:cartReducer
 });
 
-const initalState = {};
+const cartItemsFromStorage = localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : [];
+
+const initalState = {
+    cart:cartItemsFromStorage
+};
 
 const middlewares = [thunk];
 
