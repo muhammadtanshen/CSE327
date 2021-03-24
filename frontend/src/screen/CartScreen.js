@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import{useDispatch,useSelector} from 'react-redux';
 import {Row,Col,Image,ListGroup,Form,Button,Card} from 'react-bootstrap';
 import Loader from '../components/Loader';
-import {fetchCart} from '../actions/index';
+    import {fetchCart} from '../actions/index';
 
 const CartScreen = ({match,location,history})=>{
     const productId  = match.params.id;
