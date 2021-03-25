@@ -17,6 +17,7 @@ const initalState = {
     cart:{cartItems:cartItemsFromStorage}
 };
 
+
 const middlewares = [thunk];
 
 const store = createStore(reducer,initalState,composeWithDevTools(applyMiddleware(...middlewares)));

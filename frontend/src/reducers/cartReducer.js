@@ -8,8 +8,7 @@ export const cartReducer = (oldlistCart={cartItems:[]},action)=>{
             if(existItem){
                 return{
                     ...oldlistCart,
-                    cartItems: oldlistCart.cartItems.map(x=> x.productId === existItem.productId ? item : x
-                    )
+                    cartItems: oldlistCart.cartItems.map(x=> x.productId === existItem.productId ? item : x)
                 }
             }else{
                 return{

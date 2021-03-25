@@ -51,3 +51,5 @@ export const fetchCart = (id,qty)=>{
         localStorage.setItem('cartItems',JSON.stringify(getState().cart.cartItems))
     }
 }
+
+//getState().cart.cartItems
