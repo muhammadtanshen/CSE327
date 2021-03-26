@@ -1,5 +1,5 @@
 import {PRODUCT_LIST_FAIL,PRODUCT_LIST_REQUEST,PRODUCT_LIST_SUCCESS,PRODUCT_DETAIL_REQUEST,PRODUCT_DETAIL_FAIL,PRODUCT_DETAIL_SUCCESS} from '../components/constants/productConstants';
-import {CART_ADD_ITEM} from '../components/constants/cartConstant';
+import {CART_ADD_ITEM,CART_REMOVE_ITEM} from '../components/constants/cartConstant';
 import axios from 'axios';
 export const fetchAllProduct = ()=>{
     return async(dispatch,setState)=>{
@@ -50,6 +50,18 @@ export const fetchCart = (id,qty)=>{
         });
         localStorage.setItem('cartItems',JSON.stringify(getState().cart.cartItems))
     }
+}
+
+
+export const deleteCartItem = (id)=>{
+        return ((dispatch,getState)=>{
+            dispatch({
+                type:CART_REMOVE_ITEM,
+                payload:id,
+            })
+            localStorage.setItem('cartItems',JSON.stringify(getState().cart.cartItems))
+        });
+        
 }
 
 //getState().cart.cartItems

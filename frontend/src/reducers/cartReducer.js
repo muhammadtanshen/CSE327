@@ -1,4 +1,4 @@
-import {CART_ADD_ITEM} from '../components/constants/cartConstant';
+import {CART_ADD_ITEM,CART_REMOVE_ITEM} from '../components/constants/cartConstant';
 
 export const cartReducer = (oldlistCart={cartItems:[]},action)=>{
     switch(action.type){
@@ -15,6 +15,13 @@ export const cartReducer = (oldlistCart={cartItems:[]},action)=>{
                     ...oldlistCart,
                     cartItems:[...oldlistCart.cartItems,item]
                 }
+            }
+        case CART_REMOVE_ITEM:
+            return{
+                ...oldlistCart,
+                cartItems:oldlistCart.cartItems.filter(x=>{
+                    return x.productId !== action.payload;
+                })
             }
         default:
             return oldlistCart;

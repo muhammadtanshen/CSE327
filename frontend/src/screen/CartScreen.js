@@ -12,7 +12,7 @@ import {
 } from "react-bootstrap";
 import Loader from "../components/Loader";
 import CartMessage from "../components/CartMessage";
-import { fetchCart } from "../actions/index";
+import { fetchCart,deleteCartItem } from "../actions/index";
 
 const CartScreen = ({ match, location, history }) => {
   const productId = match.params.id;
@@ -24,7 +24,7 @@ const CartScreen = ({ match, location, history }) => {
     //console.log(state);
     return state.cart;
   });
-  const {cartItems} = cart;
+  const { cartItems } = cart;
   //console.log(cartItems);
   useEffect(() => {
     if (productId) {
@@ -33,8 +33,13 @@ const CartScreen = ({ match, location, history }) => {
   }, [dispatch, productId, qty]);
 
   const removeFromCart = (id) => {
-    console.log(id);
+    dispatch(deleteCartItem(id));
   };
+
+  const checkoutHandler = ()=>{
+    history.push('/login?redirect=shipping');
+  }
+
   return (
     <div>
       <Row>
@@ -46,7 +51,7 @@ const CartScreen = ({ match, location, history }) => {
             </CartMessage>
           ) : (
             <ListGroup variant="flush">
-              {cartItems.map(item => (
+              {cartItems.map((item) => (
                 <ListGroup.Item key={item.productId}>
                   <Row>
                     <Col md={2}>
@@ -58,15 +63,18 @@ const CartScreen = ({ match, location, history }) => {
                       ></Image>
                     </Col>
                     <Col md={3}>
-                      <Link to={`/product/${item.productId}`}></Link>
+                      <Link to={`/product/${item.productId}`}>{item.name}</Link>
                     </Col>
                     <Col md={2}>${item.price}</Col>
                     <Col md={2}>
                       <Form.Control
                         as="select"
-                        value={qty}
-                        onChange={(e) =>
-                          dispatch(fetchCart(item.productId, Number(e.target.value)))
+                        value={item.qty}
+                        onChange={
+                          (e) =>
+                            dispatch(
+                              fetchCart(item.productId, Number(e.target.value))
+                            )
                           //dispatch()
                         }
                       >
@@ -94,7 +102,26 @@ const CartScreen = ({ match, location, history }) => {
             </ListGroup>
           )}
         </Col>
-        <Col md={2}></Col>
+        <Col md={4}>
+          <ListGroup>
+            <ListGroup.Item>
+              <h2>
+                SubTotal(
+                {cartItems.reduce(
+                  (accumolatr, item) => accumolatr + item.qty,
+                  0
+                )}
+                )
+              </h2>
+              ${cartItems.reduce((accumolatr,item)=>accumolatr + item.qty*item.price,0).toFixed(2)}
+            </ListGroup.Item>
+            <ListGroup.Item>
+              <Button type="button" className="btn-block" disabled={cartItems.length === 0} onClick={checkoutHandler}>
+                Procceed To Checkout
+              </Button>
+            </ListGroup.Item>
+          </ListGroup>
+        </Col>
         <Col md={2}></Col>
       </Row>
     </div>
