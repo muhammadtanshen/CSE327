@@ -1,2 +1,1 @@
-# Add front end in my repo
-It will only work for the frontend
+This is a Project for NSU Market. Where you can buy and sell your daily need like pen,pencil,cutter,paper,rubber,etc.This project is now work 50%. There are something we are working on this project right now.
