@@ -1,12 +1,12 @@
 const products = [
   {
     
-    name: 'Airpods Wireless Bluetooth Headphones',
-    image: '/images/airpods.jpg',
+    name: 'Cutter',
+    image: '/images/cutter.jpg',
     description:
-      'Bluetooth technology lets you connect it with compatible devices wirelessly High-quality AAC audio offers immersive listening experience Built-in microphone allows you to take calls while working',
-    brand: 'Apple',
-    category: 'Electronics',
+      'A cutter is a sailing vessel which is distinguished from a sloop by having more than one (usually two) foresails,and the main mast stepped slightly further back.',
+    brand: 'BackYard Bug',
+    category: 'Cutting',
     price: 89.99,
     countInStock: 10,
     rating: 4.5,
@@ -14,12 +14,12 @@ const products = [
   },
   {
     
-    name: 'iPhone 11 Pro 256GB Memory',
-    image: '/images/phone.jpg',
+    name: 'Book',
+    image: '/images/Book.jpg',
     description:
-      'Introducing the iPhone 11 Pro. A transformative triple-camera system that adds tons of capability without complexity. An unprecedented leap in battery life',
-    brand: 'Apple',
-    category: 'Electronics',
+      'Telling you about your limit. Your best friend.Your situation and your chossen path with every step when book are with you. Love your bookes and hate your enemies.',
+    brand: 'Book',
+    category: 'Novel',
     price: 599.99,
     countInStock: 7,
     rating: 4.0,
@@ -27,12 +27,12 @@ const products = [
   },
   {
     
-    name: 'Cannon EOS 80D DSLR Camera',
-    image: '/images/camera.jpg',
+    name: 'Pen',
+    image: '/images/pen.jpg',
     description:
-      'Characterized by versatile imaging specs, the Canon EOS 80D further clarifies itself using a pair of robust focusing systems and an intuitive design',
-    brand: 'Cannon',
-    category: 'Electronics',
+      'A pen is a common writing instrument used to apply ink to a surface, usually paper, for writing or drawing.Historically, reed pens, quill pens, and dip pens were used, with a nib dipped in ink.',
+    brand: 'BallPoint',
+    category: 'Daily Need',
     price: 929.99,
     countInStock: 5,
     rating: 3,
@@ -40,12 +40,12 @@ const products = [
   },
   {
     
-    name: 'Sony Playstation 4 Pro White Version',
-    image: '/images/playstation.jpg',
+    name: 'Paper',
+    image: '/images/paper.jpg',
     description:
-      'The ultimate home entertainment center starts with PlayStation. Whether you are into gaming, HD movies, television, music',
-    brand: 'Sony',
-    category: 'Electronics',
+      'Paper is a thin sheet material produced by mechanically and/or chemically processing cellulose fibres derived from wood, rags, grasses or other vegetable sources in water, draining the water through fine mesh leaving the fibre evenly distributed on the surface, followed by pressing and drying.',
+    brand: 'Asia',
+    category: 'Daily Need',
     price: 399.99,
     countInStock: 11,
     rating: 5,
@@ -66,12 +66,12 @@ const products = [
   },
   {
   
-    name: 'Amazon Echo Dot 3rd Generation',
-    image: '/images/alexa.jpg',
+    name: 'Mask & Santizer',
+    image: '/images/mask&sanitizer.jpg',
     description:
-      'Meet Echo Dot - Our most popular smart speaker with a fabric design. It is our most compact smart speaker that fits perfectly into small space',
-    brand: 'Amazon',
-    category: 'Electronics',
+      'Masks and Sanitizer will protect you. To fight coronavirus, also ensure physical distancing and frequent handwashing',
+    brand: 'Dettol',
+    category: 'Daily Need',
     price: 29.99,
     countInStock: 0,
     rating: 4,
