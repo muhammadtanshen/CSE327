@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NMP | Ecommerce Website Design</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap" rel="stylesheet">
+    
+
+</head>
+<body>
+    
+    <div class="header">
+    
+    <div class="container">
+    <div class="navbar">
+    <div class="logo">
+        <img src="images/logoupdate-01.png" width="225">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">Products</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact</a></li>
+                <li><a href="">Account</a></li>
+            </ul>
+        </nav>
+        <img src = "images/cart.png" width="30px" height="30px">
+    </div>
+        <div class="row">
+          <div class="col-2">
+            <h1>Welcome to our own <br>NSU Market Place!</h1>
+            <p>An online base market place for university.<br>
+            Save your time and money.
+            </p>
+              
+              <a href="" class="btn">
+                  Explore Now &#8594;
+              </a>
+              
+        </div>
+        <div class="col-2">
+          <img src=images/pngkey.com-student-clipart-png-9876479.png> 
+        </div>
+     </div>
+    </div>
+    </div>
+    
+    <!--------Catagories showcase-------->
+    
+    <div class="categories">
+        <div class="small-container">
+        <div class="row">
+        <div class="col-3">
+            <img src="images/Books.jpg">
+            </div>
+        <div class="col-3">
+            <img src="images/Paper.jpg">
+            </div>
+        <div class="col-3">
+            <img src="images/pen.jpg">
+            </div>
+                        
+
+        </div>
+        </div>
+        
+    </div>
+    
+     <!--------Featured Products-------->
+    <div class="small-container">
+        <h2 class="title">Featured Products</h2>
+        <div class="row">
+            <div class="col-4">
+                <img src="images/productpen-1.jpg">
+                <h4>Colourful Pens</h4>
+                <p>Rating 4.5/5.0</p>
+                
+                <p>Price: 10.00tk/ps</p>
+            
+            
+            </div>
+            
+             <div class="col-4">
+                <img src="images/booksmembership.jpg">
+                <h4>Books Membership/month</h4>
+                <p>Rating 4.0/5.0</p>
+                
+                <p>Price: 200.00tk/month</p>
+            
+            
+            </div>
+            <div class="col-4">
+                <img src="images/notepad.jpg">
+                <h4>Offset Notepad</h4>
+                <p>Rating 4.7/5.0</p>
+                <p>Price: 70.00tk/ps</p>
+            
+            
+            </div>
+            <div class="col-4">
+                <img src="images/leatherbag.jpg">
+                <h4>Brown Leather Bags</h4>
+                <p>Rating 4.0/5.0</p>
+        
+                <p>Price: 3200.00tk/ps</p>
+            
+            
+            </div>
+        </div>
+        
+        <!---------Tranding Now------------>
+        
+        <h2 class="title">Tranding Now</h2>
+        <div class="row">
+            <div class="col-4">
+                <img src="images/Pencil.jpg">
+                <h4>Pencils</h4>
+                <p>Rating 4.5/5.0</p>
+                
+                <p>Price: 10.00tk/ps</p>
+            
+            
+            </div>
+            
+             <div class="col-4">
+                <img src="images/Sharpner.jpg">
+                <h4>Sharpner</h4>
+                <p>Rating 4.0/5.0</p>
+                
+                <p>Price: 10.00tk/ps</p>
+            
+            
+            </div>
+            <div class="col-4">
+                <img src="images/Eraser.jpg">
+                <h4>Erasers</h4>
+                <p>Rating 4.7/5.0</p>
+                <p>Price: 15.00tk/ps</p>
+            
+            
+            </div>
+            <div class="col-4">
+                <img src="images/Scale.jpg">
+                <h4>Ruler</h4>
+                <p>Rating 4.0/5.0</p>
+        
+                <p>Price: 20.00tk/ps</p>
+            
+            </div>
+            
+        </div>
+        <div class="col-4">
+            <div class="row">
+            <div class="col-4">
+                <img src="images/Calculator.jpg">
+                <h4>Calculator</h4>
+                <p>Rating 4.5/5.0</p>
+                
+                <p>Price: 450.00tk/ps</p>
+            
+            
+            </div>
+            
+             <div class="col-4">
+                <img src="images/Color%20Pencils.jpg">
+                <h4>Colour Pencils</h4>
+                <p>Rating 4.0/5.0</p>
+                
+                <p>Price: 120.00tk/box</p>
+            
+            
+            </div>
+            <div class="col-4">
+                <img src="images/Super%20glue.jpg">
+                <h4>Super glue</h4>
+                <p>Rating 4.7/5.0</p>
+                <p>Price: 20.00tk/ps</p>
+            
+            
+            </div>
+            <div class="col-4">
+                <img src="images/Files.jpg">
+                <h4>Files</h4>
+                <p>Rating 4.0/5.0</p>
+        
+                <p>Price: 30.00tk/ps</p>
+                
+            </div>
+            
+          </div>
+            <div class="col-4">
+            <div class="row">
+            <div class="col-4">
+                <img src="images/Cutter.jpg">
+                <h4>Cutter Knife</h4>
+                <p>Rating 4.5/5.0</p>
+                
+                <p>Price: 30.00tk/ps</p>
+            
+            
+            </div>
+            
+             <div class="col-4">
+                <img src="images/duster.PNG">
+                <h4>Duster</h4>
+                <p>Rating 4.0/5.0</p>
+                
+                <p>Price: 25.00tk/ps</p>
+            
+            
+            </div>
+            <div class="col-4">
+                <img src="images/marker.jpg">
+                <h4>White Board Marker</h4>
+                <p>Rating 4.7/5.0</p>
+                <p>Price: 35.00tk/ps</p>
+            
+            
+            </div>
+            <div class="col-4">
+                <img src="images/miband.png">
+                <h4>mi Band 4</h4>
+                <p>Rating 4.8/5.0</p>
+        
+                <p>Price: 2400.00tk/ps</p>
+                
+            </div>
+            
+            </div>
+           </div>
+        </div>
+        
+     </div>
+    
+<!--------offer---------->
+    
+ <div class="offer">
+   <div class="small-container">
+    <div class="row">
+        <div class="col-2">
+        <img src="images/miband.png" class="offer-img">
+        </div>
+        <div class="col-2">
+        <p> Exclusively Available on NMP</p>
+        <h1>mi Band 4</h1>
+        <small>
+Sport Functions -
+6 workout modes: Treadmill, exercise, outdoor running,
+cycling, walking, pool swimming; Count steps, distance,
+and calories burned
+
+Health monitoring -
+Workout completion notifications, goal setting, sleep monitoring,
+heart rate monitoring, all-day heart rate checking, resting
+heart rate, heart rate chart, idle alerts
+
+Other features -
+Alarm, proximity sensor, pre-set watch face, customizable watch face,
+lock screen, timer, stopwatch, phone alarm and notifications, incoming
+calls, message notifications, calendar notifications, app notifications,
+weather forecast, Find my phone, phone unlock, event notification,
+Night mode, Do not disturb mode (works even without phone), music
+controls on band, Bluetooth broadcasting, battery level display, different
+ways to wear, OTA updates
+            
+            </small>
+            <a href="" class="btn">Buy Now &#8594;</a>
+        </div>
+       
+       </div>
+    </div>  
+  </div>
+
+</body>
+</html>
