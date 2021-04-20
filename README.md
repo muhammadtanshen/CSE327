@@ -1,1 +1,1 @@
-This is a Project for NSU Market. Where you can buy and sell your daily need like pen,pencil,cutter,paper,rubber,etc.This project is now work 60%. There are something we are working on this project right now.
+This is a Project for NSU Market. Where you can buy  your daily need like pen,pencil,cutter,paper,rubber,etc.This project is now work 50%. There are something we are working on this project right now. This project framework we use React and Redux and Api we use Stripe Payment APi.
