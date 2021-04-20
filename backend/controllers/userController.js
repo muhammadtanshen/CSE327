@@ -38,7 +38,7 @@ exports.registerUser = asyncHandler(async(req,res,next)=>{
             _id:user._id,
             name:user.name,
             isAdmin:user.isAdmin,
-            token:generateToken(usr._id)
+            token:generateToken(user._id)
         });
     }else{
         res.status(400);
@@ -66,7 +66,7 @@ exports.updateUserProfile = asyncHandler(async (req, res) => {
     if (user) {
       user.name = req.body.name || user.name
       user.email = req.body.email || user.email
-      user.isAdmin = req.body.isAdmin || user.isAdmin
+      //user.isAdmin = req.body.isAdmin || user.isAdmin
       if (req.body.password) {
         user.password = req.body.password
       }
@@ -77,8 +77,67 @@ exports.updateUserProfile = asyncHandler(async (req, res) => {
         _id: updatedUser._id,
         name: updatedUser.name,
         email: updatedUser.email,
-        isAdmin: updatedUser.isAdmin,
+        //isAdmin: updatedUser.isAdmin,
         token: generateToken(updatedUser._id),
+      })
+    } else {
+      res.status(404)
+      throw new Error('User not found')
+    }
+  })
+
+
+  exports.getUsers = asyncHandler(async(req,res)=>{
+      const users = await User.find({});
+      if(users){
+        res.json(users);
+      }else{
+          throw new Error("No Users found.")
+      }
+      
+  })
+
+
+  exports.deleteUser = asyncHandler(async (req, res) => {
+    const user = await User.findById(req.params.id)
+  
+    if (user) {
+      await user.remove()
+      res.json({ message: 'User removed' })
+    } else {
+      res.status(404)
+      throw new Error('User not found')
+    }
+  })
+
+
+  exports.getUserById = asyncHandler(async (req, res) => {
+    const user = await User.findById(req.params.id).select('-password')
+    res.json(user);
+    if (user) {
+      res.json(user)
+    } else {
+      res.status(404)
+      throw new Error('User not found')
+    }
+})
+
+exports.updateUser = asyncHandler(async (req, res) => {
+    const user = await User.findById(req.params.id)
+    console.log(user);
+  
+    if (user) {
+      user.name = req.body.name || user.name
+      user.email = req.body.email || user.email
+      user.isAdmin = req.body.isAdmin || user.isAdmin;
+  
+      const updatedUser = await user.save()
+  
+      res.json({
+        _id: updatedUser._id,
+        name: updatedUser.name,
+        email: updatedUser.email,
+        isAdmin: updatedUser.isAdmin,
       })
     } else {
       res.status(404)
