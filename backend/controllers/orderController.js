@@ -1,6 +1,6 @@
 const asyncHandler = require('express-async-handler');
 const Order = require('../models/orderModel');
-
+// const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 
 exports.addOrderItems = asyncHandler(async (req, res) => {
@@ -42,6 +42,7 @@ exports.getOrderById = asyncHandler(async(req,res)=>{
     'name email isAdmin'
   );
   if(order){
+    //console.log('Stripe',stripe);
     res.json(order);
   }else{
     res.status(404);
@@ -56,7 +57,7 @@ exports.updateOrderToPaid = asyncHandler(async (req, res) => {
   const order = await Order.findById(req.params.id)
   // console.log(order);
   // console.log("Body",req.body);
-  if ('update order',order) {
+  if (order) {
     order.isPaid = true
     order.paidAt = Date.now()
     order.paymentResult = {
@@ -65,15 +66,20 @@ exports.updateOrderToPaid = asyncHandler(async (req, res) => {
       update_time: req.body.update_time,
       email_address: req.body.email_address,
     }
+    //console.log('Stripe Id',session.id);
 
     const updatedOrder = await order.save()
-
-    res.json(updatedOrder)
+    res.json(updatedOrder);
+    //res.json(updatedOrder,{id:session.id})
   } else {
     res.status(404)
     throw new Error('Order not found')
   }
 })
+
+
+
+
 
 
 exports.updateOrderToDelivered = asyncHandler(async (req, res) => {
@@ -94,8 +100,15 @@ exports.updateOrderToDelivered = asyncHandler(async (req, res) => {
 
 
 exports.getMyOrders = asyncHandler(async (req, res) => {
-  const orders = await Order.find({ user: req.user._id })
-  res.json(orders)
+  const id = req.params.id;
+  const orders = await Order.find({ user: id})
+  if(orders){
+    res.json(orders)
+  }else{
+    res.status(404);
+    throw new Error("NOt found your orders.")
+  }
+  
 })
 
 
@@ -103,5 +116,4 @@ exports.getOrders = asyncHandler(async (req, res) => {
   const orders = await Order.find({}).populate('user', 'id name')
   res.json(orders)
 })
-
 
